@@ -1,6 +1,7 @@
 import { Model, RelationMappings, RelationMappingsThunk } from 'objection';
 import { BaseObjectionModel } from './common/objection-model';
 import { Post } from './post';
+import { PostComment } from './post-comment';
 
 export class User extends BaseObjectionModel {
   static tableName = 'users';
@@ -12,6 +13,15 @@ export class User extends BaseObjectionModel {
       join: {
         from: 'users.id',
         to: 'posts.userId',
+      },
+    },
+
+    postComments: {
+      relation: Model.HasManyRelation,
+      modelClass: PostComment,
+      join: {
+        from: 'users.id',
+        to: 'post_comments.userId',
       },
     },
   };
