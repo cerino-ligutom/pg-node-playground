@@ -13,6 +13,8 @@ const app = express();
   }
 })();
 
+import './objectionjs';
+
 app.listen(8080, async () => {
   console.log('Server started on port 8080');
 });
