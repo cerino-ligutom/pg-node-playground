@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('name');
     table.string('email');
     table.string('password');
-    table.timestamps(true, true);
+    table.timestamps(true, true, true);
   });
 
   await knex.schema.createTable('posts', (table) => {
@@ -14,7 +14,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('title');
     table.text('content');
     table.integer('userId').unsigned().references('id').inTable('users');
-    table.timestamps(true, true);
+    table.timestamps(true, true, true);
   });
 
   await knex.schema.createTable('post_comments', (table) => {
