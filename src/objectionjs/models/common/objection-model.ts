@@ -1,5 +1,5 @@
 import Objection, { PartialModelObject } from 'objection';
-import { pgKnex } from '../../../pg-knex';
+import { pgKnex } from '../../../knexjs/pg-knex';
 
 // Attach knex to objection model
 Objection.Model.knex(pgKnex);

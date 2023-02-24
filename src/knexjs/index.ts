@@ -1,4 +1,4 @@
-import { pgKnex } from '../pg-knex';
+import { pgKnex } from './pg-knex';
 import type { Post, PostComment, User } from '../types';
 
 const Post = pgKnex<Post>('posts');
